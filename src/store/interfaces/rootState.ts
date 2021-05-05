@@ -1,3 +1,3 @@
 export default interface RootState {
-    count: number;
+    helloMessage: string;
 }

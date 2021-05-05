@@ -21,7 +21,9 @@
         tile
         size="80"
         color="grey">
-        <span class="white--text headline">DG</span>
+        <span class="white--text headline">
+          <img :src="profilePicture" alt="" />
+        </span>
       </v-list-item-avatar>
     </v-list-item>
 

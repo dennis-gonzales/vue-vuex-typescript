@@ -35,6 +35,8 @@
 import Vue from 'vue';
 import HelloWorld from './components/HelloWorld.vue';
 
+
+
 export default Vue.extend({
   name: 'App',
 
@@ -43,21 +45,35 @@ export default Vue.extend({
   },
 
   computed: {
-    userName: {
-      get(): string {
-        return this.$store.state.session.userName;
-      }
-    },
-    bio: {
-      get(): string {
-        return this.$store.state.session.bio;
-      }
-    },
-    profilePicture: {
-      get(): string {
-        return this.$store.state.session.profilePicture;
-      }
-    },
+    /** using session state */
+      // userName: {
+        //   get(): string {
+          //     return this.$store.state.session.userName;
+      //   }
+      // },
+
+      /** using getters */
+      userName: {
+        get(): string {
+          return this.$store.getters.getUserName;
+        }
+      },
+
+      bio: {
+        get(): string {
+          return this.$store.getters.getBio;
+        }
+      },
+
+      profilePicture: {
+        get(): string {
+          return this.$store.getters.getProfilePicture;
+        }
+      },
+  },
+
+  mounted() {
+    console.log({ store: this.$store });
   },
 
   data: () => ({

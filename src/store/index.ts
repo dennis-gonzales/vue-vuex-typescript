@@ -7,11 +7,11 @@ Vue.use(Vuex);
 
 const store: StoreOptions<RootState> = {
     state: {
-        count: 0
+        helloMessage: "Hello from index.ts"
     },
     mutations: {
-        increment(state) {
-            state.count++
+        sayHelloWorld(state) {
+            state.helloMessage = "Hello World"
         }
     },
     modules: {
