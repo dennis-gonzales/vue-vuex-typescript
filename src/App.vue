@@ -26,7 +26,7 @@
     </v-app-bar>
 
     <v-main>
-      <HelloWorld :msg="`State: ${userName}`"/>
+      <HelloWorld :userName="userName" :bio="bio" :profilePicture="profilePicture" />
     </v-main>
   </v-app>
 </template>
@@ -47,7 +47,17 @@ export default Vue.extend({
       get(): string {
         return this.$store.state.session.userName;
       }
-    }
+    },
+    bio: {
+      get(): string {
+        return this.$store.state.session.bio;
+      }
+    },
+    profilePicture: {
+      get(): string {
+        return this.$store.state.session.profilePicture;
+      }
+    },
   },
 
   data: () => ({

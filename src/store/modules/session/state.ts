@@ -1,4 +1,5 @@
 export interface SessionState {
     userName: string;
-    age: number;
+    bio: string;
+    profilePicture: string;
 }
