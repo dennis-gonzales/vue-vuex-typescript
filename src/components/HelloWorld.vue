@@ -29,11 +29,11 @@
 
     <v-card-actions>
       <v-btn
+        v-on:click="changePicture"
         outlined
         rounded
-        text
-      >
-        Button
+        text>
+        CHANGE PICTURE
       </v-btn>
     </v-card-actions>
   </v-card>
@@ -48,6 +48,11 @@ export default Vue.extend({
     userName: String,
     bio: String,
     profilePicture: String,
+  },
+  methods: {
+    changePicture() {
+      this.$store.commit("UPDATE_PROFILE_PICTURE", "https://randomuser.me/api/portraits/men/10.jpg");
+    }
   },
 });
 </script>

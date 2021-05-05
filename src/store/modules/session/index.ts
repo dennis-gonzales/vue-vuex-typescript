@@ -1,7 +1,8 @@
 import { Module } from "vuex";
 import { SessionState } from './state';
 import { getters } from './getters';
-import RootState from "@/store/interfaces/rootState";
+import RootState from '@/store/interfaces/rootState';
+import { mutations } from '@/store/mutations/session';
 
 const state: SessionState = {
     userName: "Dennis Gonzales",
@@ -11,7 +12,8 @@ const state: SessionState = {
 
 const session: Module<SessionState, RootState> = {
     state,
-    getters
+    getters,
+    mutations
 }
 
 export default session;
