@@ -1,8 +1,34 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld :msg="`State: ${getCount}`"/>
-  </div>
+  <v-app>
+    <v-app-bar
+      app
+      color="primary"
+      dark
+    >
+      <div class="d-flex align-center">
+        <v-app-bar-nav-icon></v-app-bar-nav-icon>
+
+        <v-toolbar-title>Vue, Vuex and Typescript</v-toolbar-title>
+
+
+      </div>
+
+      <v-spacer></v-spacer>
+
+      <v-btn
+        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        target="_blank"
+        text
+      >
+        <span class="mr-2">LATEST RELEASES</span>
+        <v-icon>mdi-open-in-new</v-icon>
+      </v-btn>
+    </v-app-bar>
+
+    <v-main>
+      <HelloWorld :msg="`State: ${userName}`"/>
+    </v-main>
+  </v-app>
 </template>
 
 <script lang="ts">
@@ -11,26 +37,21 @@ import HelloWorld from './components/HelloWorld.vue';
 
 export default Vue.extend({
   name: 'App',
+
   components: {
-    HelloWorld
+    HelloWorld,
   },
+
   computed: {
-    getCount: {
+    userName: {
       get(): string {
         return this.$store.state.session.userName;
       }
     }
-  }
+  },
+
+  data: () => ({
+    //
+  }),
 });
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
