@@ -17,7 +17,7 @@ export default Vue.extend({
   computed: {
     getCount: {
       get(): string {
-        return this.$store.state.count;
+        return this.$store.state.session.userName;
       }
     }
   }

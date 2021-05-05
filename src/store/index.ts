@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex, { StoreOptions } from 'vuex';
 import RootState from './interfaces/rootState';
+import session from './modules/session';
 
 Vue.use(Vuex);
 
@@ -12,6 +13,9 @@ const store: StoreOptions<RootState> = {
         increment(state) {
             state.count++
         }
+    },
+    modules: {
+        session
     }
 };
 
