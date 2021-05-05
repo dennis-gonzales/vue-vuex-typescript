@@ -40,7 +40,7 @@
 </template>
 
 <script lang="ts">
-import { SessionMutations } from '@/store/mutations/session';
+import { SessionActions } from '@/store/actions/session';
 import Vue from 'vue';
 
 export default Vue.extend({
@@ -52,10 +52,7 @@ export default Vue.extend({
   },
   methods: {
     changePicture() {
-      this.$store.commit(
-        SessionMutations.UPDATE_PROFILE_PICTURE, 
-        "https://randomuser.me/api/portraits/men/10.jpg"
-      );
+      this.$store.dispatch(SessionActions.UPDATE_PROFILE_PICTURE);
     }
   },
 });
@@ -63,7 +60,5 @@ export default Vue.extend({
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
+
 </style>

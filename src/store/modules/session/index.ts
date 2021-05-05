@@ -1,7 +1,8 @@
 import { Module } from "vuex";
 import { SessionState } from './state';
-import { getters } from './getters';
 import RootState from '@/store/interfaces/rootState';
+import { getters } from './getters';
+import { actions } from '@/store/actions/session';
 import { mutations } from '@/store/mutations/session';
 
 const state: SessionState = {
@@ -13,6 +14,7 @@ const state: SessionState = {
 const session: Module<SessionState, RootState> = {
     state,
     getters,
+    actions,
     mutations
 }
 
