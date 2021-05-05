@@ -40,6 +40,7 @@
 </template>
 
 <script lang="ts">
+import { SessionMutations } from '@/store/mutations/session';
 import Vue from 'vue';
 
 export default Vue.extend({
@@ -51,7 +52,10 @@ export default Vue.extend({
   },
   methods: {
     changePicture() {
-      this.$store.commit("UPDATE_PROFILE_PICTURE", "https://randomuser.me/api/portraits/men/10.jpg");
+      this.$store.commit(
+        SessionMutations.UPDATE_PROFILE_PICTURE, 
+        "https://randomuser.me/api/portraits/men/10.jpg"
+      );
     }
   },
 });
